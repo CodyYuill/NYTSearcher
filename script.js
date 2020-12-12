@@ -21,7 +21,8 @@ function appendArticles(amount, articleArr){
     for(var i =0; i < amount;i++)
     {
         var articleLI = $("<li>")
-        var articleTitle = $("<h1>").text(articleArr[i].headline.main);
+        var articleTitle = $("<a>").text(articleArr[i].headline.main);
+        articleTitle.attr("href", articleArr[i].web_url);
         var articleAuthors = $("<p>").text(articleArr[i].byline.original);
         articleLI.append(articleTitle);
         if(articleAuthors != null)
